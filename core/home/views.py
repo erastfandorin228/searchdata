@@ -1,12 +1,9 @@
 from platform import system
 
-from django.shortcuts import render
+from django.shortcuts import  render
 
-# Create your views here.
+def get_alco():
+    return["Jim Beam", "Vodka", "Pivo"]
+
 def index(request):
-    return render(request, "index.html", {
-        "data": [
-            "Searchdata project",
-            system(),
-        ],
-    })
+    return render(request, "index.html", {"alco": get_alco(), "title": "Main"})
