@@ -10,4 +10,3 @@ black = "==19.10b0"
 django = "*"
 dynaconf = {extras = ["yaml"],version = "*"}
 whitenoise = "*"
-s
