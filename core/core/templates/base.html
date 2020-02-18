@@ -1,10 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>searchdata :: {% block title %}XXX{% endblock %}</title>
+{% load static %}
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>searchdata :: </title>
+	<meta name="description" content="Верстка & frontend - мои работы и навыки">
+	<meta name="keywords" content="Верстка & frontend, верстка, frontend">
+	<!-- Favicon -->
+	<link rel="icon" href="image/favicon.ico" type="image/x-icon">
+ 	<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+
+
+
+
+
+
+ 	<!-- OG Tags -->
+	<meta property="og:title" content="верстка & frontend">
+	<meta property="og:description" content="Верстка & frontend - мои работы и навыки">
+	<meta property="og:type" content="article">
+	<meta property="og:image" content="#" >
+	<meta property="og:site_name" content="TEST">
+	<!-- CSS Styles -->
+	<link rel="stylesheet" href="fonts/fonts/fonts.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-{% block body %}{% endblock %}
+	<header class="header" id="header">
+		<div class="container">
+			<div class="navigation d-flex justify-content-between">
+				<a href="#" class="logo">
+					<span>My</span>portfolio
+				</a>
+				<nav class="menu">
+					<ul class="menu__list d-flex">
+						<li class="menu__item ">
+							<a href="#about" class="menu__link">
+								Немного о нас
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#skills" class="menu__link">
+								Планируемые мероприятия
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#works" class="menu__link">
+								Контакты
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<a href="mailto:info@myname.com" class="email">
+					info@myname.com
+				</a>
+			</div>
+			<div class="offer">
+				<h1 class="offer__title">
+					Привет, рачье!!
+				</h1>
+				<p class="offer__text">
+					Вас ждет лучший ТАМАДА! Мы организуем Вам незабываемый вечер!
+				</p>
+			</div>
+			<a href="#footer" class="go">
+				&darr;
+			</a>
+		</div>
+	</header>
+	<section class="about" id="about">
+		<div class="container">
+			<h2 class="about__title">
+				Обо мне
+			</h2>
+			<div class="about__content d-flex justify-content-between">
+				<div class="background">
+					<h3 class="background__title">
+						Бэкграунд
+					</h3>
+					<p class="background__text">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
+					</p>
+					<p class="background__text">
+						Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.
+					</p>
+					<p class="background__text">
+						Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa quiis aute irure dolor in reprehenderit in is aute irure dolor in reprehenderit in is aute irure dolor in reprehenderit in.
+					</p>
+				</div>
+				<div class="about__info">
+					<div class="merits">
+						<h3 class="merits__title">
+							Заслуги
+						</h3>
+						<ul class="merits__list d-flex justify-content-between">
+							<li class="merits__item">
+								<div class="merits__digits">
+									<span class="merits__rotate">
+										75
+									</span>
+								</div>
+								<p class="merits__description">
+									Реализованных проектов
+								</p>
+							</li>
+							<li class="merits__item">
+								<div class="merits__digits">
+									<span class="merits__rotate">
+										154
+									</span>
+								</div>
+								<p class="merits__description">
+									Положительных отзыва
+								</p>
+							</li>
+							<li class="merits__item">
+								<div class="merits__digits">
+									<span class="merits__rotate">
+										8
+									</span>
+								</div>
+								<p class="merits__description">
+									Лет <br>
+									опыта
+								</p>
+							</li>
+						</ul>
+					</div>
+					<div class="connection">
+						<h3 class="connection__title">
+							Связь
+						</h3>
+						<div class="connection__contacts d-flex align-items-center">
+							<div class="connection__social">
+								<a href="freelance.ru/myname" class="connection__link">
+									freelance.ru/myname
+								</a>
+								<a href="vk.com/12343" class="connection__link">
+									vk.com/12343
+								</a>
+								<a href="mailto:info@sitename.ru" class="connection__link">
+									info@sitename.ru
+								</a>
+							</div>
+							<div class="connection__appeal d-flex align-items-center">
+								<span class="icon icon-User"></span>
+								<em>
+									Не стесняйтесь, пишите
+								</em>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="skills" id="skills">
+		<div class="container">
+			<h2 class="skills__title">
+				Навыки
+			</h2>
+			<ul class="technology d-flex justify-content-between align-items-center">
+				<li class="technology__item d-flex align-items-center">
+					<div class="technology__percent">
+						98%
+					</div>
+					<p class="technology__scroll">
+						Photoshop
+					</p>
+				</li>
+				<li class="technology__item d-flex align-items-center">
+					<div class="technology__percent">
+						99%
+					</div>
+					<p class="technology__scroll">
+						Html5
+					</p>
+				</li>
+				<li class="technology__item d-flex align-items-center">
+					<div class="technology__percent">
+						100%
+					</div>
+					<p class="technology__scroll">
+						Css3
+					</p>
+				</li>
+				<li class="technology__item d-flex align-items-center">
+					<div class="technology__percent">
+						0%
+					</div>
+					<p class="technology__scroll">
+						Лень
+					</p>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section class="works" id="works">
+		<div class="container">
+			<h2 class="works__title">
+				Работы
+			</h2>
+			<div class="picture d-flex justify-content-between">
+				<div class="picture__item">
+					<img src="image/img_left.jpg" alt="Моя работа" class="picture__preview">
+					<div class="picture__overlay">
+						<p class="picture__name">
+							Название работы
+						</p>
+						<a href="#" class="picture__link">
+							Смотреть
+						</a>
+					</div>
+				</div>
+				<div class="picture__item">
+					<img src="image/img_middle.jpg" alt="Моя работа" class="picture__preview">
+					<div class="picture__overlay">
+						<p class="picture__name">
+							Название работы
+						</p>
+						<a href="#" class="picture__link">
+							Смотреть
+						</a>
+					</div>
+				</div>
+				<div class="picture__item">
+					<img src="image/img_right.jpg" alt="Моя работа" class="picture__preview">
+					<div class="picture__overlay">
+						<p class="picture__name">
+							Название работы
+						</p>
+						<a href="#" class="picture__link">
+							Смотреть
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer" id="footer">
+		<div class="container">
+			<p class="future">
+				2018-2099 / Смотрю в будущее
+			</p>
+		</div>
+	</footer>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
