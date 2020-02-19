@@ -1,6 +1,6 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
 	<meta name="description" content="Верстка & frontend - мои работы и навыки">
 	<meta name="keywords" content="Верстка & frontend, верстка, frontend">
 	<!-- Favicon -->
-	<link rel="icon" href="image/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="{% 'image/favicon.ico' %}" type="image/x-icon">
  	<link rel="shortcut icon" href="{% static 'image/favicon.ico' %}" type="image/x-icon">
 
 
@@ -23,8 +23,8 @@
 	<meta property="og:image" content="#" >
 	<meta property="og:site_name" content="TEST">
 	<!-- CSS Styles -->
-	<link rel="stylesheet" href="fonts/fonts/fonts.css">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="{% 'fonts/fonts/fonts.css' %}">
+	<link rel="stylesheet" href="{% 'css/main.css' %}">
 </head>
 <body>
 	<header class="header" id="header">
@@ -52,13 +52,13 @@
 						</li>
 					</ul>
 				</nav>
-				<a href="mailto:info@myname.com" class="email">
-					info@myname.com
+				<a href="mailto:erastfandorin228@mail.ru" class="email">
+					erastfandorin228@mail.ru
 				</a>
 			</div>
 			<div class="offer">
 				<h1 class="offer__title">
-					Привет, рачье!!
+					Всем привет!
 				</h1>
 				<p class="offer__text">
 					Вас ждет лучший ТАМАДА! Мы организуем Вам незабываемый вечер!
@@ -141,13 +141,13 @@
 									vk.com/12343
 								</a>
 								<a href="mailto:info@sitename.ru" class="connection__link">
-									info@sitename.ru
+									facebook.com
 								</a>
 							</div>
 							<div class="connection__appeal d-flex align-items-center">
 								<span class="icon icon-User"></span>
 								<em>
-									Не стесняйтесь, пишите
+									Не стесняйтесь, пишите! Ждем Вас!
 								</em>
 							</div>
 						</div>
@@ -204,7 +204,7 @@
 			</h2>
 			<div class="picture d-flex justify-content-between">
 				<div class="picture__item">
-					<img src="image/img_left.jpg" alt="Моя работа" class="picture__preview">
+					<img src="{% 'image/img_left.jpg' %}" alt="Моя работа" class="picture__preview">
 					<div class="picture__overlay">
 						<p class="picture__name">
 							Название работы
@@ -215,7 +215,7 @@
 					</div>
 				</div>
 				<div class="picture__item">
-					<img src="image/img_middle.jpg" alt="Моя работа" class="picture__preview">
+					<img src="{% 'image/img_middle.jpg' %}" alt="Моя работа" class="picture__preview">
 					<div class="picture__overlay">
 						<p class="picture__name">
 							Название работы
@@ -226,7 +226,7 @@
 					</div>
 				</div>
 				<div class="picture__item">
-					<img src="image/img_right.jpg" alt="Моя работа" class="picture__preview">
+					<img src="{% 'image/img_right.jpg' %}" alt="Моя работа" class="picture__preview">
 					<div class="picture__overlay">
 						<p class="picture__name">
 							Название работы
@@ -247,7 +247,7 @@
 		</div>
 	</footer>
 
-	<script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="{% 'js/jquery-3.4.1.min.js' %}"></script>
+	<script src="{% 'js/main.js' %}"></script>
 </body>
 </html>
