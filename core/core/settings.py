@@ -75,7 +75,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-
+db_url = _settings.DATABASE_URL
+if _settings.ENV_FOR_DYNACONF == "heroku":
+    db_url = os.getenv("DATABASE_URL")
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
