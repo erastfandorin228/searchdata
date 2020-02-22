@@ -10,3 +10,5 @@ black = "==19.10b0"
 django = "*"
 dynaconf = {extras = ["yaml"],version = "*"}
 whitenoise = "*"
+dj-database-url = "*"
+psycopg2-binary = "*"
