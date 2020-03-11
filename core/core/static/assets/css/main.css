@@ -2122,6 +2122,7 @@ input, select, textarea {
 
 		#top h1 {
 			margin-top: 0.35em;
+			line-height: 1.0 em;
 		}
 
 		#top p {
