@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+ <!-- Portfolio -->
+   <article id="portfolio" class="wrapper style3">
+    <div class="container">
+     <header>
+      <h2>Вот наши работы.</h2>
+      <p>Это было нелегко.</p>
+     </header>
+     <div class="row">
+      <div class="col-4 col-6 col-12">
+       <article class="box style2">
+{% block content1 %}{% endblock %}
+       </article>
+      </div>
+     </div>
+        <footer>
+      <p>Вы уже заинтересовались?</p>
+      <a href="#contact" class="button large scrolly">Свяжитесь со мной</a>
+     </footer>
+    </div>
+   </article>
+{% endblock%}
