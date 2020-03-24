@@ -2,6 +2,12 @@
 {% load static %}
 {% block title %}My blog!{% endblock %}
 
+{% load django_bootstrap_breadcrumbs %}
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "List" "views.post_list" %}
+{% endblock %}
+
 {% block content1 %}
   <h1>My Blog</h1>
   {% for post in posts %}

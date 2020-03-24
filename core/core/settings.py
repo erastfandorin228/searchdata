@@ -15,8 +15,9 @@ from pathlib import Path
 import dj_database_url
 
 from dynaconf import settings as _settings
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = Path(__file__).parent.parent.parent.resolve()
 PROJECT_DIR = BASE_DIR / "core" / "core"
 
@@ -30,7 +31,6 @@ SECRET_KEY = _settings.SECRET_KEY
 DEBUG = _settings.DEBUG
 
 ALLOWED_HOSTS = _settings.ALLOWED_HOSTS
-
 
 # Application definition
 
@@ -87,7 +87,6 @@ if _settings.ENV_FOR_DYNACONF == "heroku":
 
 DATABASES = {"default": dj_database_url.parse(db_url, conn_max_age=600)}
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -106,7 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -120,7 +118,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -131,3 +128,13 @@ STATIC_ROOT = STATIC_ROOT_DIR.as_posix()
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [PROJECT_DIR / "static"]
+
+# settings for forms
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_HOST_USER = 'ighor.gukov@mail.ru'
+EMAIL_HOST_PASSWORD = 'drdeathnik93'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
