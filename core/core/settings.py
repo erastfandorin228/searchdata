@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
+from secrets.yaml import SECRET_KEY_FOR
 
 from dynaconf import settings as _settings
 
@@ -132,9 +133,16 @@ STATICFILES_DIRS = [PROJECT_DIR / "static"]
 # settings for forms
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+MAILER_EMAIL_BACKEND = EMAIL_BACKEND
+
+
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_HOST_USER = 'ighor.gukov@mail.ru'
-EMAIL_HOST_PASSWORD = 'drdeathnik93'
+EMAIL_HOST_PASSWORD = SECRET_KEY_FOR
 EMAIL_PORT = 465
 EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
