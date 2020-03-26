@@ -28,6 +28,7 @@ PROJECT_DIR = BASE_DIR / "core" / "core"
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = _settings.SECRET_KEY
 SECRET_KEY_FOR_MAIL = _settings.SECRET_KEY_FOR_MAIL
+SECRET_MAIL = _settings.SECRET_MAIL
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = _settings.DEBUG
@@ -142,7 +143,7 @@ MAILER_EMAIL_BACKEND = EMAIL_BACKEND
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_HOST_USER = 'ighor.gukov@mail.ru'
+EMAIL_HOST_USER = SECRET_MAIL
 EMAIL_HOST_PASSWORD = SECRET_KEY_FOR_MAIL
 EMAIL_PORT = 465
 EMAIL_USE_TLS = True
