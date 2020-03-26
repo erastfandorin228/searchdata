@@ -1,5 +1,6 @@
 default:
   SECRET_KEY: ""
+  SECRET_KEY_FOR_MAIL: ""
   DEBUG: true
   ALLOWED_HOSTS: []
   DATABASE_URL: ""
