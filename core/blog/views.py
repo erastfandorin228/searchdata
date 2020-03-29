@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
-from .models import Post
+from .models import Post, Comment
 from django.core.mail import send_mail
-from .forms import EmailPostForm
+from .forms import EmailPostForm, CommentForm
 
 
 # Create your views here.
@@ -28,13 +28,31 @@ def post_list(request):
 
 
 def post_detail(request, year, month, day, post):
+    comment_form = None
     post = get_object_or_404(Post, slug=post,
                              status='published',
                              publish__year=year,
                              publish__month=month,
                              publish__day=day)
-
-    return render(request, 'blog/post/detail.html', {'post': post})
+    # Список активных комментариев для этой статьи.
+    comments = post.comments.filter(active=True)
+    new_comment = None
+    if request.method == 'POST':
+        # Пользователь отправил комментарий.
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            # Создаем комментарий, но пока не сохраняем в базе данных.
+            new_comment = comment_form.save(commit=False)
+            # Привязываем комментарий к текущей статье.
+            new_comment.post = post
+            # Сохраняем комментарий в базе данных.
+            new_comment.save()
+        else:
+            comment_form = CommentForm()
+    return render(request, 'blog/post/detail.html', {'post': post,
+                                                     'comments': comments,
+                                                     'new_comment': new_comment,
+                                                     'comment_form': comment_form})
 
 
 class PostListView(ListView):
@@ -58,7 +76,7 @@ def post_share(request, post_id):
             post_url = request.build_absolute_uri(
                 post.get_absolute_url())
             subject = '{} ({}) recommends you reading "{}"'.format(cd['name'], cd['email'], post.title)
-            message = 'Read "{}" at {}\n\n{}\'s comments: {}'.format(post.title, post_url, cd['name'], cd['comment'])
+            message = 'Read "{}" at {}\n\n{}\'s comment: {}'.format(post.title, post_url, cd['name'], cd['comment'])
             send_mail(subject, message, 'ighor.gukov@mail.ru',
                       [cd['to']])
             sent = True
