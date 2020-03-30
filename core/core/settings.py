@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # our apps
     'django_bootstrap_breadcrumbs',
+    'taggit',
     'home',
     'blog.apps.BlogConfig',
 ]
