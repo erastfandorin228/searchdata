@@ -1,5 +1,6 @@
 {% extends "blog/blog_base.html" %}
 {% load static %}
+{% load blog_tags %}
 {% block title %}My blog!{% endblock %}
 
 {% load django_bootstrap_breadcrumbs %}
@@ -10,6 +11,7 @@
 
 {% block content1 %}
   <h1>My Blog</h1>
+  <p>This is my blog. I've written {% total_posts %} posts so far.</p>
   {% if tag %}
     <h2>Posts tagged with "{{ tag.name }}"</h2>
   {% endif %}
@@ -30,7 +32,7 @@
     <p class="date">
       Published {{ post.publish }} by {{ post.author }}
     </p>
-    {{ post.body|truncatewords:30|linebreaks }}
+    {{ post.body|markdown|truncatewords_html:30 }}
   {% endfor %}
 {% include "pagination.html" with page=posts %}
 {% endblock %}

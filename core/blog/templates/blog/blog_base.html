@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load blog_tags %}
 {% block title %}{% endblock %}
 {% block content %}
  <!-- Portfolio -->
@@ -9,6 +10,21 @@
       <h2>Вот наши работы.</h2>
       <p>Это было нелегко.</p>
      </header>
+  <div id="sidebar">
+      <h3>Latest posts</h3>
+      {% show_latest_posts 3 %}
+    <h3>Most commented posts</h3>
+    {% get_most_commented_posts as most_commented_posts %}
+    <ul>
+    {% for post in most_commented_posts %}
+      <li>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+
+
      <div class="row">
       <div class="col-4 col-6 col-12">
        <article class="box style2">

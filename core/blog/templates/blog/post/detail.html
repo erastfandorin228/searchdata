@@ -1,5 +1,6 @@
 {% extends "blog/blog_base.html" %}
 {% load static %}
+{% load blog_tags %}
 {% block title %}{{ post.title }}{% endblock %}
 
 {% load django_bootstrap_breadcrumbs %}
@@ -21,7 +22,7 @@
   <p class="date">
     Published {{ post.publish }} by {{ post.author }}
   </p>
-  {{ post.body|linebreaks }}
+  {{ post.body|markdown }}
   <p>
     <a href="{% url "blog:post_share" post.id %}"> Share this post </a>
   </p>
