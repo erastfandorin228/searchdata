@@ -22,6 +22,9 @@
   <p class="date">
     Published {{ post.publish }} by {{ post.author }}
   </p>
+  <div><img src="{% if post.image %}{{ post.image.url }}{% else %} {% static "img/no_image.png" %}{% endif %}"
+    width="480" >
+  </div>
   {{ post.body|markdown }}
   <p>
     <a href="{% url "blog:post_share" post.id %}"> Share this post </a>

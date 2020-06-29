@@ -94,6 +94,8 @@ if _settings.ENV_FOR_DYNACONF == "heroku":
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {"default": dj_database_url.parse(db_url, conn_max_age=600)}
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

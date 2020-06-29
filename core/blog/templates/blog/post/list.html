@@ -19,6 +19,8 @@
     <h2>
       <a href="{{ post.get_absolute_url }}">
         {{ post.title }}
+        <img src="{% if post.image %}{{ post.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"
+        width="480">
       </a>
     </h2>
     <p class="tags">Tags:
