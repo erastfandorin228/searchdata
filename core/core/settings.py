@@ -96,6 +96,7 @@ if _settings.ENV_FOR_DYNACONF == "heroku":
 DATABASES = {"default": dj_database_url.parse(db_url, conn_max_age=600)}
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+#MEDIA_ROOT = os.path.join(BASE_DIR, "live-static-files", "media-root")
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -134,10 +135,12 @@ USE_TZ = True
 STATIC_ROOT_DIR = BASE_DIR / "static"
 STATIC_ROOT_DIR.mkdir(exist_ok=True)
 STATIC_ROOT = STATIC_ROOT_DIR.as_posix()
+#STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
 
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [PROJECT_DIR / "static"]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # settings for forms
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
