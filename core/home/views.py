@@ -13,3 +13,6 @@ def index(request):
 
 def index_events(request):
     return render(request, "index_events.html")
+
+def thank_you(request):
+    return render(request, "thank_you.html")

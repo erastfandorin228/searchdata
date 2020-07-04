@@ -32,7 +32,7 @@
 			<nav id="nav">
 				<ul class="container">
 					<li><a href="/">Общая информация</a></li>
-					<li><a href="#work">Стоимость услуг</a></li>
+					<li><a href="/#work">Преимущества</a></li>
 					<li><a href="/blog">Блог</a></li>
 					<li><a href="#contact">Контакты</a></li>
 				</ul>
@@ -57,23 +57,33 @@
    <article id="contact" class="wrapper style4">
     <div class="container medium" id="contact2">
      <header>
-      <h2>Напишите мне, чтобы я могла написать Вам.</h2>
-      <p>Каждый клиент для нас имеет значение!</p>
+      <h2>Напишите мне, чтобы я мог написать Вам.</h2>
+      <p>Каждый читатель имеет значение!</p>
      </header>
      <div class="row">
       <div class="col-12">
        <form method="post" action=".">
+		   {% csrf_token %}
+		   {{ form.non_field_errors }}
         <div class="row">
          <div class="col-6 col-12-small">
+			 {{ form.name.errors }}
+{#	  {{ form.name }}#}
           <input type="text" name="name" id="name" placeholder="Name" />
          </div>
          <div class="col-6 col-12-small">
+			 {{ form.email.errors }}
+{#	  {{ form.email }}#}
           <input type="text" name="email" id="email" placeholder="Email" />
          </div>
          <div class="col-12">
+			 {{ form.subject.errors }}
+{#	  {{ form.subject }}#}
           <input type="text" name="subject" id="subject" placeholder="Subject" />
          </div>
          <div class="col-12">
+			 {{ form.message.errors }}
+{#	  {{ form.message }}#}
           <textarea name="message" id="message" placeholder="Message"></textarea>
          </div>
          <div class="col-12">
