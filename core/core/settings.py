@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'taggit',
     'home',
     'blog.apps.BlogConfig',
+    'feedback',
 ]
 
 MIDDLEWARE = [

@@ -8,6 +8,7 @@ from taggit.models import Tag
 from django.db.models import Count
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank, TrigramSimilarity
 from django.db.models.functions import Greatest
+from core.settings import SECRET_MAIL
 
 
 # Create your views here.
@@ -97,7 +98,7 @@ def post_share(request, post_id):
                 post.get_absolute_url())
             subject = '{} ({}) recommends you reading "{}"'.format(cd['name'], cd['email'], post.title)
             message = 'Read "{}" at {}\n\n{}\'s comment: {}'.format(post.title, post_url, cd['name'], cd['comment'])
-            send_mail(subject, message, 'ighor.gukov@mail.ru',
+            send_mail(subject, message, SECRET_MAIL,
                       [cd['to']])
             sent = True
     else:
