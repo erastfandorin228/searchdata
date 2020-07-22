@@ -22,7 +22,7 @@
 	<!-- CSS Styles -->
 
 	<link type="text/css" rel="stylesheet" href="{% static 'assets/css/main2.css' %}">
-	<link type="text/css" rel="stylesheet" href="{% static 'assets/css/corrected4.css' %}" >
+	<link type="text/css" rel="stylesheet" href="{% static 'assets/css/corrected6.css' %}" >
 
 
 </head>
@@ -61,7 +61,7 @@
       <p>Каждый читатель имеет значение!</p>
      </header>
      <div class="row">
-      <div class="col-12">
+      <div id="as_message" class="col-12">
 
        <form action="{% url 'feedback_view' %}" method="POST" >
 		   {% csrf_token %}
@@ -87,14 +87,26 @@
 {#	  {{ form.message }}#}
           <textarea name="message" id="message" placeholder="Message"></textarea>
          </div>
-         <div class="col-12">
+         <div id="send" class="col-12">
           <ul class="actions">
+			  <li><input type="hidden" name="next" value="{{ request.path }}#send"></li>
            <li><input type="submit" value="Send Message" /></li>
            <li><input type="reset" value="Clear Form" class="alt" /></li>
           </ul>
          </div>
         </div>
        </form>
+		  {% if messages %}
+		  	{% for message in messages %}
+		  	<div class="alert alert-success" role="alert">
+			  <button class="close" data-dismiss="alert">
+				  <small><sup></sup></small>
+			   {{ message }}</button>
+
+		  	</div>
+		  	{% endfor %}
+		  {% endif %}
+
       </div>
 						<div class="col-12">
 							<hr />

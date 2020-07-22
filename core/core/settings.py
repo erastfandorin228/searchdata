@@ -14,7 +14,6 @@ import os
 from pathlib import Path
 import dj_database_url
 
-
 from dynaconf import settings as _settings
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -96,7 +95,7 @@ if _settings.ENV_FOR_DYNACONF == "heroku":
 
 DATABASES = {"default": dj_database_url.parse(db_url, conn_max_age=600)}
 MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_ROOT = os.path.join(BASE_DIR, "live-static-files", "media-root")
 
 # Password validation
@@ -135,7 +134,7 @@ USE_TZ = True
 
 STATIC_ROOT_DIR = BASE_DIR / "static"
 STATIC_ROOT_DIR.mkdir(exist_ok=True)
-#STATIC_ROOT = STATIC_ROOT_DIR.as_posix()
+# STATIC_ROOT = STATIC_ROOT_DIR.as_posix()
 STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
 
 STATIC_URL = "/static/"
@@ -149,9 +148,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
 MAILER_EMAIL_BACKEND = EMAIL_BACKEND
 
-
-
-
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_HOST_USER = SECRET_MAIL
@@ -159,3 +155,6 @@ EMAIL_HOST_PASSWORD = SECRET_KEY_FOR_MAIL
 EMAIL_PORT = 465
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+MY_INFO = 80
+MESSAGE_LEVEL = MY_INFO

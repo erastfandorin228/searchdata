@@ -4,7 +4,15 @@
     padding:10px;
     background:#efefef;
     height:100%;
-}
+    }
+
+    button.close {
+    top: 10px;
+    background-color: tomato;
+    padding: 40px;
+    max-width: max-content;
+    font-size: x-large;
+    }
 
   	.wrapper.style4{
   	background-color: #e0b044
