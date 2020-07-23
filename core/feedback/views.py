@@ -9,11 +9,9 @@ from django.contrib import messages
 
 
 def contact_us(request):
-    global next
+    next = request.POST.get('next', '/')
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        next = request.POST.get('next', '/')
-
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
@@ -30,6 +28,6 @@ def contact_us(request):
             messages.add_message(request, MY_INFO, 'Введены неверные данные! Ваше сообщение не отправлено!')
         # form = ContactForm()
     #next = next + '#send'
-    return HttpResponseRedirect(next)
+    return redirect(next)
     # return redirect('/#send')
     # return render(request, f'{BASE_DIR}/core/home/templates/index.html', {'form': form})
