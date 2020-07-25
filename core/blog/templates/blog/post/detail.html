@@ -23,7 +23,7 @@
     Published {{ post.publish }} by {{ post.author }}
   </p>
   <div><img src="{% if post.image %}{{ post.image.url }}{% else %} {% static "img/no_image.png" %}{% endif %}"
-    width="480" >
+    width="100%" >
   </div>
   {{ post.body|markdown }}
   <p>
