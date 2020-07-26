@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .views import FeedBackView
 
 urlpatterns = [
-    path('', views.contact_us, name='feedback_view'),
+    path('', FeedBackView.as_view(), name='feedback_view'),
 ]
